@@ -37,6 +37,38 @@ class LZW
         return implode(',', $result);
     }
 
+    public function decompress(string $compressed): ?string
+    {
+        $compressed = explode(',', $compressed);
+        $dictSize = 256;
+        $dictionary = [];
+
+        for ($i = 1; $i < $dictSize; $i++) {
+            $dictionary[$i] = $this->uniChr($i);
+        }
+
+        $w = $this->uniChr($compressed[0]);
+        $result = $w;
+
+        for ($i = 1; $i < count($compressed); $i++) {
+            $k = $compressed[$i];
+
+            if (isset($dictionary[$k])) {
+                $entry = $dictionary[$k];
+            } elseif ($k == $dictSize) {
+                $entry = $w.$this->charAt($w, 0);
+            } else {
+                return null;
+            }
+
+            $result .= $entry;
+            $dictionary[$dictSize++] = $w.$this->charAt($entry, 0);
+            $w = $entry;
+        }
+
+        return $result;
+    }
+
     public function charAt(string $string, int $index): ?string
     {
         if ($index < mb_strlen($string)) {
