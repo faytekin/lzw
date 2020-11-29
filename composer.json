@@ -17,6 +17,11 @@
             "Faytekin\\LZW\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Faytekin\\LZW\\Test\\": "tests"
+        }
+    },
     "require": {
         "php": ">=7.2",
         "ext-mbstring": "*"
@@ -26,5 +31,12 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "archive": {
+        "exclude": ["/tests"]
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test:coverage": "phpunit --coverage-text --coverage-clover=coverage.clover"
     }
 }
