@@ -1,0 +1,31 @@
+{
+    "name": "faytekin/lzw",
+    "description": "Compression library for Lempel–Ziv–Welch (LZW) for PHP",
+    "license": "MIT",
+    "homepage": "https://github.com/faytekin/lzw",
+    "keywords": ["lzw", "compression", "LZW PHP"],
+    "authors": [
+        {
+            "name": "Fatih Aytekin",
+            "email": "fatih@aytekin.me",
+            "homepage": "https://fatihaytekin.com/",
+            "role": "developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Faytekin\\LZW\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Faytekin\\LZW\\Test\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0"
+    }
+}
