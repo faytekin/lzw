@@ -80,6 +80,6 @@ class LZW
 
     public function uniChr(int $u): string
     {
-        return mb_convert_encoding('&#' . intval($u) . ';', 'UTF-8', 'HTML-ENTITIES');
+        return mb_convert_encoding('&#'.intval($u).';', 'UTF-8', 'HTML-ENTITIES');
     }
 }
