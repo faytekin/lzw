@@ -4,7 +4,7 @@ namespace Faytekin\LZW\Test;
 
 class LZWTest extends TestCase
 {
-    public function testCompress(): void
+    public function test_compress(): void
     {
         $data = $this->getCompressionString();
 
@@ -14,7 +14,7 @@ class LZWTest extends TestCase
         }
     }
 
-    public function testDecompress(): void
+    public function test_decompress(): void
     {
         $data = $this->getCompressionString();
 
